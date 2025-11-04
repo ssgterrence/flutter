@@ -84,26 +84,31 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(25.0),
-          ),
-          margin: EdgeInsets.all(50.0),
-          width: double.infinity,
-          height: double.infinity,
-          child: Container(
-            margin: EdgeInsets.all(50.0),
-            width: double.infinity,
-            height: double.infinity,
-            padding: EdgeInsets.all(25.0),
-            decoration: BoxDecoration(
-              color: Colors.deepOrangeAccent,
-              borderRadius: BorderRadius.circular(25.0),
+      body: Container(
+        color: Colors.blue,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: 100.0,
+              height: 50.0,
+              margin: EdgeInsets.all(20.0),
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(25.0),
+              ),
             ),
-            child: Text("Hello", style: TextStyle(color: Colors.white)),
-          ),
+            Container(
+              width: 100.0,
+              height: 50.0,
+              margin: EdgeInsets.all(20.0),
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(25.0),
+              ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
