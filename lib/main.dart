@@ -83,21 +83,24 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        leading: Icon(Icons.menu, color: Colors.red),
       ),
       body: Container(
         padding: EdgeInsets.all(50.0),
         child: Stack(
           children: [
-            Image.asset(
-              'assets/images/photo-1530569673472-307dc017a82d.jpeg',
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
             SizedBox(
               height: 300,
               child: Center(
                 child: Text("Flutter", style: TextStyle(color: Colors.red)),
               ),
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle, color: Colors.red),
+              trailing: Text("3:45 PM", style: TextStyle(color: Colors.red)),
+              onTap: () => print("ListTile tapped"),
+              tileColor: Colors.blue.withOpacity(0.8),
+              title: Text("Hello Flutter", style: TextStyle(color: Colors.red)),
             ),
           ],
         ),
