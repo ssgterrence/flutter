@@ -84,20 +84,23 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/images/photo-1530569673472-307dc017a82d.jpeg',
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
-          SizedBox(
-            height: 300,
-            child: Center(
-              child: Text("Flutter", style: TextStyle(color: Colors.red)),
+      body: Container(
+        padding: EdgeInsets.all(50.0),
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/images/photo-1530569673472-307dc017a82d.jpeg',
+              width: double.infinity,
+              fit: BoxFit.cover,
             ),
-          ),
-        ],
+            SizedBox(
+              height: 300,
+              child: Center(
+                child: Text("Flutter", style: TextStyle(color: Colors.red)),
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
