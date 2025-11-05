@@ -85,25 +85,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         leading: Icon(Icons.menu, color: Colors.red),
       ),
-      body: Container(
-        padding: EdgeInsets.all(50.0),
-        child: Stack(
-          children: [
-            SizedBox(
-              height: 300,
-              child: Center(
-                child: Text("Flutter", style: TextStyle(color: Colors.red)),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle, color: Colors.red),
-              trailing: Text("3:45 PM", style: TextStyle(color: Colors.red)),
-              onTap: () => print("ListTile tapped"),
-              tileColor: Colors.blue.withOpacity(0.8),
-              title: Text("Hello Flutter", style: TextStyle(color: Colors.red)),
-            ),
-          ],
-        ),
+      body: Wrap(
+        children: [
+          Text(
+            'You have pushed the button this many timeave pushed the button this many timeave pushed the button this many timeave pushed the button this many times:',
+          ),
+          Text('You have pushed the button this many times:'),
+          Text('You have pushed the button this many times:'),
+          Text('You have pushed the button this many times:'),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
