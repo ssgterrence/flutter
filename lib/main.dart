@@ -85,15 +85,17 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         color: Colors.blue,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
             Container(
               width: 100.0,
               height: 50.0,
-              margin: EdgeInsets.all(20.0),
+
               decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(25.0),
@@ -102,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: 100.0,
               height: 50.0,
-              margin: EdgeInsets.all(20.0),
+
               decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(25.0),
