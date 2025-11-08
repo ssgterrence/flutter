@@ -8,6 +8,12 @@ void main() {
 //state: the screen changes when change happens
 //materal app
 //scaffold
+
+//
+
+//statefull: can refresh screen
+//stateless: cannot refresh screen
+//setState to refresh
 String? title = "Flutter Mapp"; //null safety
 
 class MyApp extends StatelessWidget {
@@ -24,21 +30,42 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(title: const Text('Flutter Mapp')),
-          body: const Center(child: Text('Hello, World!')),
+      home: MyWidget(),
+    );
+  }
+}
 
-          bottomNavigationBar: NavigationBar(
-            destinations: [
-              NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-              NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-            ],
-            onDestinationSelected: (int value) =>
-                print("select value is $value"),
+//Stateful widget
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
 
-            selectedIndex: 1,
-          ),
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  int currentIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title: const Text('Flutter Mapp')),
+        body: currentIndex == 0
+            ? Center(child: Text("Home Page"))
+            : Center(child: Text("Profile Page")),
+
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+            NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+          ],
+          onDestinationSelected: (int value) {
+            setState(() {
+              currentIndex = value;
+            });
+          },
+
+          selectedIndex: currentIndex,
         ),
       ),
     );
