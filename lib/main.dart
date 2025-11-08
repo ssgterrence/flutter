@@ -15,12 +15,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.teal,
           brightness: Brightness.dark,
         ),
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter Mapp'),
+          leading: Icon(Icons.login),
+          actions: [Text("Action 1"), Icon(Icons.login)],
+          backgroundColor: Colors.teal,
+        ),
+        body: const Center(child: Text('Hello, World!')),
       ),
     );
   }
