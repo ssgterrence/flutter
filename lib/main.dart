@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
+
 //stateless: the screen does not change
 //state: the screen changes when change happens
 //materal app
 //scaffold
+String? title = "Flutter Mapp"; //null safety
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
