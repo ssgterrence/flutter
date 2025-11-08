@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/widget_tree.dart';
 import 'package:flutter_app/widgets/navbar_widget.dart';
 
 void main() {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: MyWidget(),
+      home: WidgetTree(),
     );
   }
 }
