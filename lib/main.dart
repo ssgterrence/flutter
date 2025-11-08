@@ -23,13 +23,17 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Mapp'),
-          leading: Icon(Icons.login),
-          actions: [Text("Action 1"), Icon(Icons.login)],
-          backgroundColor: Colors.teal,
-        ),
+        appBar: AppBar(title: const Text('Flutter Mapp')),
         body: const Center(child: Text('Hello, World!')),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+            NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+          ],
+          onDestinationSelected: (int value) => print("select value is $value"),
+
+          selectedIndex: 1,
+        ),
       ),
     );
   }
