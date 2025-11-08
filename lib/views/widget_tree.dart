@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/data/notifiers.dart';
 import 'package:flutter_app/views/pages/home_page.dart';
 import 'package:flutter_app/views/pages/profile_page.dart';
 import 'package:flutter_app/widgets/navbar_widget.dart';
@@ -19,7 +20,13 @@ class WidgetTree extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(title: const Text('Flutter Mapp')),
-        body: pages.elementAt(1), //display which page by index
+        // body: pages.elementAt(1), //display which page by index
+        body: ValueListenableBuilder(
+          valueListenable: selectedPageNotifier,
+          builder: (context, selectedPage, child) {
+            return pages.elementAt(selectedPage);
+          },
+        ),
         bottomNavigationBar: NavbarWidget(),
       ),
     );
