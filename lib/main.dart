@@ -22,48 +22,21 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Flutter Mapp')),
-        body: const Center(child: Text('Hello, World!')),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              DrawerHeader(child: Text('Header')),
-              ListTile(
-                title: Text(
-                  'logout',
-                  style: TextStyle(color: Color(0xFFFFFFFF)),
-                ),
-              ),
-            ],
-          ),
-        ),
-        floatingActionButton: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FloatingActionButton(
-              onPressed: () {
-                print("clicked-floatingButton1");
-              },
-              child: const Icon(Icons.add),
-            ),
-            SizedBox(height: 10.0),
-            FloatingActionButton(
-              onPressed: () {
-                print("clicked-floatingButton2");
-              },
-              child: const Icon(Icons.add),
-            ),
-          ],
-        ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-          ],
-          onDestinationSelected: (int value) => print("select value is $value"),
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(title: const Text('Flutter Mapp')),
+          body: const Center(child: Text('Hello, World!')),
 
-          selectedIndex: 1,
+          bottomNavigationBar: NavigationBar(
+            destinations: [
+              NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+              NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+            ],
+            onDestinationSelected: (int value) =>
+                print("select value is $value"),
+
+            selectedIndex: 1,
+          ),
         ),
       ),
     );
