@@ -25,6 +25,24 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter Mapp')),
         body: const Center(child: Text('Hello, World!')),
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                print("clicked-floatingButton");
+              },
+              child: const Icon(Icons.add),
+            ),
+            SizedBox(height: 10.0),
+            FloatingActionButton(
+              onPressed: () {
+                print("clicked-floatingButton");
+              },
+              child: const Icon(Icons.add),
+            ),
+          ],
+        ),
         bottomNavigationBar: NavigationBar(
           destinations: [
             NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
