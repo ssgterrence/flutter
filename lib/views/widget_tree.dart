@@ -19,7 +19,22 @@ class WidgetTree extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: const Text('Flutter Mapp')),
+        appBar: AppBar(
+          title: const Text('Flutter Mapp'),
+          actions: [
+            IconButton(
+              onPressed: () {
+                themeNotifier.value = !themeNotifier.value;
+              },
+              icon: ValueListenableBuilder(
+                valueListenable: themeNotifier,
+                builder: (context, isDark, child) {
+                  return Icon(isDark ? Icons.dark_mode : Icons.light_mode);
+                },
+              ),
+            ),
+          ],
+        ),
         // body: pages.elementAt(1), //display which page by index
         body: ValueListenableBuilder(
           valueListenable: selectedPageNotifier,
